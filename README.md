@@ -19,9 +19,9 @@ logo aqui
 
 ## ✔️ Técnicas e tecnologias utilizadas
 
-- ``Java 8``
-- ``InteliJ IDEA``
-- ``Paradigma de orientação a objetos``
+- ``Javascript``
+- ``CSS``
+- ``React Native``
 
 
 * [Título e Imagem de capa](#Título-e-Imagem-de-capa)
