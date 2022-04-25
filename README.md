@@ -17,6 +17,13 @@ logo aqui
 - `Funcionalidade 2a`: descrição da funcionalidade 2a relacionada à funcionalidade 2
 - `Funcionalidade 3`: descrição da funcionalidade 3
 
+## ✔️ Técnicas e tecnologias utilizadas
+
+- ``Java 8``
+- ``InteliJ IDEA``
+- ``Paradigma de orientação a objetos``
+
+
 * [Título e Imagem de capa](#Título-e-Imagem-de-capa)
 * [Badges](#badges)
 * [Índice](#índice)
