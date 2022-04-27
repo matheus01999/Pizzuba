@@ -8,14 +8,15 @@ logo aqui
 
 <h4 align="center"> 
     :construction:  Projeto em construção  :construction:
+ </h4>
     
-    ### Features
+ ### Features
 
 - [x] Cadastro de usuário
 - [x] Cadastro de cliente
 - [ ] Cadastro de produtos
     
-</h4>
+
 
 ## :hammer: Funcionalidades do projeto
 
