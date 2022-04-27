@@ -1,11 +1,15 @@
-# Venda de Pizzas
-Sistema para o gerenciamnto de pizzarias
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
-![3132693](https://user-images.githubusercontent.com/50186745/165602356-4062798b-f311-4419-b030-bc114bab5565.png)
+
+# Venda de Pizzas 
+![pizza (2)](https://user-images.githubusercontent.com/50186745/165603035-79cddd0a-cf9a-4a5d-b37e-4970ec4f49e9.png)
+
+Sistema para o gerenciamnto de pizzarias 
+
+
 <h1 align="center"> Pizzi </h1>
 
 
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
 
 <h3 align="center">
     :computer: Tecnologias :computer:
