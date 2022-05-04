@@ -18,7 +18,14 @@
         <h1 class="header-title">Pizzuba</h1>
     </header>
     <main>
-        <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Cliente</button>
+        <div class="navbar">
+            <ul>
+                <li><button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Cliente</button></li>
+                <li><button type="button" class="button blue mobile" id="cadastrarProduto">Cadastrar Produtos</button></li>
+                <li><button type="button" class="button blue mobile" id="listarPedidos">Pedidos</button></li>
+            </ul>
+        </div>
+        
         <h3>Pedidos</h3>
         <table class="records">
             <thead>
@@ -63,37 +70,96 @@
                 </tr>
             </tbody>
         </table>
+        <!-- MODAL CADASTRO CLIENTE-->
         <div class="modal" id="modal">
             <div class="modal-content">
                 <header class="modal-header">
                     <h2>Novo Cliente</h2>
                     <span class="modal-close" id="modalClose">&#10006;</span>
                 </header>
-                <form class="modal-form">
-                    <input type="text" class="modal-field" placeholder="Nome do Cliente">
-                    <input type="email" class="modal-field" placeholder="e-mail do Cliente">
-                    <input type="text" class="modal-field" placeholder="Celular do Cliente">
-                    <input type="text" class="modal-field" placeholder="Cidade do Cliente">
 
-                    <!--Checkbox-->
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          Meia
-                        </label>
-                      </div>
-                    <!--BOX-->
-
+                <!-- FORMULARIO DE CLIENTE -->
+                <form id="form" class="modal-form">
+                    <input id="nome" type="text" class="modal-field" placeholder="Nome do Cliente" required>
+                    <input id="email" type="email" class="modal-field" placeholder="e-mail do Cliente" required>
+                    <input id="celular" type="text" class="modal-field" placeholder="Celular do Cliente" required>
+                    <input id="cidade" type="text" class="modal-field" placeholder="Cidade do Cliente" required>
                 </form>
+
                 <footer class="modal-footer">
                     <button id="salvar"class="button green">Salvar</button>
                     <button id="cancelar" class="button blue">Cancelar</button>
                 </footer>
             </div>
         </div>
+
+        <!--MODAL CADASTRO PRODUTO-->
+        <div class="modal" id="modalProd">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2> Novo Produto</h2>
+                    <span class="modal-close" id="modalCloseProd">&#10006;</span>
+                </header>
+                <!--formulario de cadastro de produto-->
+                <form id="formCadProd" class="modal-form">
+                    <input type="text" class="modal-field" placeholder="nome">
+                    <input type="text" class="modal-field" placeholder="nome">
+                    <input type="text" class="modal-field" placeholder="nome">
+                    <input type="text" class="modal-field" placeholder="nome">
+                </form>
+                <footer class="modal-footer">
+                    <button id="salvarProd"class="button green">Salvar</button>
+                    <button id="cancelarProd" class="button blue">Cancelar</button>
+                </footer>
+
+            </div>
+        </div>
+
+        <!--MODAL PEDIDOS-->
+        <div class="modal" id="modalPedi">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2> Novo Produto</h2>
+                    <span class="modal-close" id="modalClosePedi">&#10006;</span>
+                </header>
+                <!--LISAT DE PEDIDOS-->
+                <table class="records">
+                    <thead>
+                        <tr>
+                            <th>Cliente</th>
+                            <th>Contato</th>
+                            <th>Endereço</th>
+                            <th>Pedido</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        
+                        <tr>
+                            <td>Matheus Rocha</td>
+                            <td>11-xxxx-xxx2</td>
+                            <td>Rua merghentaler 192</td>
+                            <td>Calabresa</td>
+                            <td>
+                                <button type="button" class="button green">Enviar</button>
+                                <button type="button" class="button red">Cancelar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        
+
+
     </main>
     <footer>
         Copyright &copy; Prof. Matheus Rocha
     </footer>
+
+    <script src="main.js"></script>
 </body>
 </html>

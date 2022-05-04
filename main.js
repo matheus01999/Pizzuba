@@ -3,8 +3,28 @@
 const openModal = () => document.getElementById('modal')
     .classList.add('active')
 
-const closeModal = () => document.getElementById('modal')
-    .classList.remove('active')
+const openModalProd = () => document.getElementById('modalProd')
+    .classList.add('active')
+
+const openModalPedi = () => document.getElementById('modalPedi')
+    .classList.add('active')
+
+const closeModal = () => {
+    clearFields()
+    document.getElementById('modal').classList.remove('active')
+}
+
+const closeModalProd = () => {
+    clearFields()
+    document.getElementById('modalProd').classList.remove('active')
+}
+
+const closeModalPedi = () => {
+    clearFields()
+    document.getElementById('modalPedi').classList.remove('active')
+}
+
+
 
 const tempClient = {
     nome: "matheus",
@@ -18,8 +38,25 @@ const tempClient = {
 //interação com o layout
 const saveClient = () => {
     if(isValidFields()){
-        console.log("Cadastrnado Cliente")
+        const client = {
+            nome: document.getElementById('nome').value,
+            email: document.getElementById('email').value,
+            celular: document.getElementById('celular').value,
+            cidade: document.getElementById('cidade').value
+        }
+        createClient(client)
+        closeModal()
     }
+}
+
+const isValidFields = () => {
+    return document.getElementById('form').reportValidity()
+}
+
+const clearFields = ( ) => {
+    const fields = document.querySelectorAll('.modal-field')
+    fields.forEach(field => field.value = "")
+    document.getElementById('nome').dataset.index = 'new'
 }
 
 //FUNÇOES DO LOCALSTORAGE
@@ -58,8 +95,25 @@ const deleteClient = (index) => {
 document.getElementById('cadastrarCliente')
     .addEventListener('click', openModal)
 
+document.getElementById('cadastrarProduto')
+    .addEventListener('click', openModalProd)
+
+document.getElementById('listarPedidos')
+    .addEventListener('click', openModalPedi)
+
 document.getElementById('modalClose')
     .addEventListener('click', closeModal)
 
+document.getElementById('modalCloseProd')
+    .addEventListener('click', closeModalProd)
+
+document.getElementById('modalClosePedi')
+    .addEventListener('click', closeModalPedi)
+
+
 document.getElementById('salvar')
     .addEventListener('click', saveClient)
+
+document.getElementById('cancelar')
+    .addEventListener('click', closeModal)
+
