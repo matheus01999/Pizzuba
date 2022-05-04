@@ -9,8 +9,14 @@ Sistema para o gerenciamnto de pizzarias
 
 <h1 align="center"> Pizzi </h1>
 
-![Screenshot from 2022-04-27 22-27-33](https://user-images.githubusercontent.com/50186745/165658035-8b1215fc-1ef6-4140-9f92-bc87bae016f4.png)
 
+![img1](https://user-images.githubusercontent.com/50186745/165787274-d7bd6183-2421-42ce-9df6-9179135da1bf.png)
+
+desc.
+
+![img2](https://user-images.githubusercontent.com/50186745/165787294-97e61cd1-f7c4-4a4e-826d-11fda0d5b4a3.png)
+
+desc.
 
 <h3 align="center">
     :computer: Tecnologias :computer:
