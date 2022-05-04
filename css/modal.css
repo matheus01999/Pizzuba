@@ -7,6 +7,7 @@
     background: #00000090;
     opacity: 0;
     z-index: -1;
+    margin: 20px;
 }
 
 .modal.active{

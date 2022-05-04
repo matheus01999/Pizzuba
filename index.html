@@ -11,65 +11,78 @@
     <link rel="stylesheet" href="css/records.css">
     <link rel="stylesheet" href="css/modal.css">
     <script src="main.js" defer></script>
-    <title>Pizz</title>
+    <link rel="icon" type="image/x-con" href="./pizza (2).png">
+    <title>Pizzuba</title>
 </head>
 <body>
     <header>
         <h1 class="header-title">Pizzuba</h1>
     </header>
     <main>
+        <!--BARRA DE NAVEGAÇÃO-->
         <div class="navbar">
             <ul>
                 <li><button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Cliente</button></li>
-                <li><button type="button" class="button blue mobile" id="cadastrarProduto">Cadastrar Produtos</button></li>
-                <li><button type="button" class="button blue mobile" id="listarPedidos">Pedidos</button></li>
+                <li><button type="button" class="button blue mobile" id="cadastrarPedido">Cadastrar Pedido</button></li>
             </ul>
         </div>
         
-        <h3>Pedidos</h3>
+        <!--LISTA DE PEDIDOS-->
+        <h3>Clientes</h3>
         <table class="records">
             <thead>
                 <tr>
-                    <th>Nome</th>
-                    <th>E-mail</th>
-                    <th>Celular</th>
-                    <th>Cidade</th>
+                    <th>Cliente</th>
+                    <th>Pedido</th>
+                    <th>Endereço</th>
+                    <th>Contato</th>
                     <th>Ação</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Maria</td>
-                    <td>maria@gmail.com</td>
+                    <td>02221</td>
+                    <td>Rua Torta, 44</td>
                     <td>(11) 97165-1111</td>
-                    <td>Anapolis</td>
                     <td>
-                        <button type="button" class="button green">editar</button>
-                        <button type="button" class="button red">excluir</button>
+                        <button type="button" class="button green">Editar</button>
+                        <button type="button" class="button red">Cancelar</button>
                     </td>
                 </tr>
-                <tr>
-                    <td>João Pedro</td>
-                    <td>joao@gmail.com</td>
-                    <td>(11) 97165-2222</td>
-                    <td>Jandira</td>
-                    <td>
-                        <button type="button" class="button green">editar</button>
-                        <button type="button" class="button red">excluir</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Jose da Silva</td>
-                    <td>jose@gmail.com</td>
-                    <td>(11) 97165-3333</td>
-                    <td>São Roque</td>
-                    <td>
-                        <button type="button" class="button green">editar</button>
-                        <button type="button" class="button red">excluir</button>
-                    </td>
-                </tr>
+                
             </tbody>
         </table>
+
+        <!--lISTA DE CLIENTES-->
+        <h3>Pedidos</h3>
+        <table class="records">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Contato</th>
+                    <th>Endereço</th>
+                    <th>Pedidos</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Maria</td>
+                    <td>(11) 97165-1111</td>
+                    <td>Anapolis</td>
+                    <td>0</td>
+                    <td>
+                        <button type="button" class="button green">Finalizar</button>
+                        <button type="button" class="button red">Cancelar</button>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+    
+
         <!-- MODAL CADASTRO CLIENTE-->
         <div class="modal" id="modal">
             <div class="modal-content">
@@ -78,7 +91,7 @@
                     <span class="modal-close" id="modalClose">&#10006;</span>
                 </header>
 
-                <!-- FORMULARIO DE CLIENTE -->
+                <!-- formulario de cadastro do cliente -->
                 <form id="form" class="modal-form">
                     <input id="nome" type="text" class="modal-field" placeholder="Nome do Cliente" required>
                     <input id="email" type="email" class="modal-field" placeholder="e-mail do Cliente" required>
@@ -93,66 +106,31 @@
             </div>
         </div>
 
-        <!--MODAL CADASTRO PRODUTO-->
-        <div class="modal" id="modalProd">
+        <!--MODAL CADASTRO PEDIDOS-->
+        <div class="modal" id="modalPedi">
             <div class="modal-content">
                 <header class="modal-header">
-                    <h2> Novo Produto</h2>
-                    <span class="modal-close" id="modalCloseProd">&#10006;</span>
+                    <h2>Realizar Pedido</h2>
+                    <span class="modal-close" id="modalClosePedi">&#10006;</span>
                 </header>
-                <!--formulario de cadastro de produto-->
-                <form id="formCadProd" class="modal-form">
-                    <input type="text" class="modal-field" placeholder="nome">
-                    <input type="text" class="modal-field" placeholder="nome">
-                    <input type="text" class="modal-field" placeholder="nome">
-                    <input type="text" class="modal-field" placeholder="nome">
+                <!--formulario para realizar pedido-->
+                <form id="formCadPedi" class="modal-form">
+                    <input id="sabor" type="text" class="modal-field" placeholder="Sabor" required>
+                    <input id="sabor" type="text" class="modal-field" placeholder="Tamanho" required>
+                    <input id="sabor" type="text" class="modal-field" placeholder="Tipo" required>
+                    <input id="sabor" type="text" class="modal-field" placeholder="Cliente" required>
                 </form>
+              
+
                 <footer class="modal-footer">
-                    <button id="salvarProd"class="button green">Salvar</button>
-                    <button id="cancelarProd" class="button blue">Cancelar</button>
+                    <button id="salvarPedi"class="button green">Adicionar</button>
+                    <button id="cancelarPedi" class="button blue">Cancelar</button>
                 </footer>
 
             </div>
         </div>
 
-        <!--MODAL PEDIDOS-->
-        <div class="modal" id="modalPedi">
-            <div class="modal-content">
-                <header class="modal-header">
-                    <h2> Novo Produto</h2>
-                    <span class="modal-close" id="modalClosePedi">&#10006;</span>
-                </header>
-                <!--LISAT DE PEDIDOS-->
-                <table class="records">
-                    <thead>
-                        <tr>
-                            <th>Cliente</th>
-                            <th>Contato</th>
-                            <th>Endereço</th>
-                            <th>Pedido</th>
-                            <th>Ação</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                        
-                        <tr>
-                            <td>Matheus Rocha</td>
-                            <td>11-xxxx-xxx2</td>
-                            <td>Rua merghentaler 192</td>
-                            <td>Calabresa</td>
-                            <td>
-                                <button type="button" class="button green">Enviar</button>
-                                <button type="button" class="button red">Cancelar</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </div>
-        </div>
-
-        
+      
 
 
     </main>

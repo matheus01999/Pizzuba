@@ -2,28 +2,19 @@
 
 const openModal = () => document.getElementById('modal')
     .classList.add('active')
-
-const openModalProd = () => document.getElementById('modalProd')
-    .classList.add('active')
-
-const openModalPedi = () => document.getElementById('modalPedi')
-    .classList.add('active')
-
+ 
 const closeModal = () => {
     clearFields()
     document.getElementById('modal').classList.remove('active')
 }
 
-const closeModalProd = () => {
-    clearFields()
-    document.getElementById('modalProd').classList.remove('active')
-}
+const openModalPedi = () => document.getElementById('modalPedi')
+    .classList.add('active')
 
 const closeModalPedi = () => {
     clearFields()
     document.getElementById('modalPedi').classList.remove('active')
 }
-
 
 
 const tempClient = {
@@ -90,26 +81,23 @@ const deleteClient = (index) => {
 }
 
 
-//EVENTS
+//EVENTS CLIENTES
 
 document.getElementById('cadastrarCliente')
     .addEventListener('click', openModal)
 
-document.getElementById('cadastrarProduto')
-    .addEventListener('click', openModalProd)
-
-document.getElementById('listarPedidos')
-    .addEventListener('click', openModalPedi)
-
 document.getElementById('modalClose')
     .addEventListener('click', closeModal)
 
-document.getElementById('modalCloseProd')
-    .addEventListener('click', closeModalProd)
+//EVENTS PEDIDOS
+
+document.getElementById('cadastrarPedido')
+    .addEventListener('click', openModalPedi)
 
 document.getElementById('modalClosePedi')
     .addEventListener('click', closeModalPedi)
 
+//EVENTS BOTÕES
 
 document.getElementById('salvar')
     .addEventListener('click', saveClient)
@@ -117,3 +105,9 @@ document.getElementById('salvar')
 document.getElementById('cancelar')
     .addEventListener('click', closeModal)
 
+document.getElementById('cancelarPedi')
+    .addEventListener('click', closeModalPedi)
+    //TESTE     
+
+    document.getElementById('pedidoSemCadastro')
+        .addEventListener('click' , my_fun)
