@@ -16,17 +16,68 @@ const closeModalPedi = () => {
     document.getElementById('modalPedi').classList.remove('active')
 }
 
-
-const tempClient = {
-    nome: "matheus",
-    email: "matheus.rocha01999@outlook.com",
-    celular: "949730036",
-    cidade: "são paulo"
-
+//Atualização tabela Cliente
+const createRow = (client) => {
+    const newRow = document.createElement('tr')
+newRow.innerHTML = `
+        <td>${client.nome}</td>
+        <td>${client.email}</td>
+        <td>${client.celular}</td>
+        <td>${client.cidade}</td>
+        <td>
+            <button type="button" class="button green">Editar</button>
+            <button type="button" class="button red" >Excluir</button>
+        </td>
+    `
+    document.querySelector('#tbClient>tbody').appendChild(newRow)
 }
 
 
-//interação com o layout
+const updateTable = () => {
+    const dbClient = readClient()
+    dbClient.forEach(createRow)
+
+    
+}
+
+//Atualização Tabela Pedido
+const createRowPedi = (pedido) => {
+    const newRowPedi = document.createElement('tr')
+newRowPedi.innerHTML = `
+        <td>${pedido.sabor}</td>
+        <td>${pedido.tamanho}</td>
+        <td>${pedido.tipo}</td>
+        <td>
+            <button type="button" class="button green">Editar</button>
+            <button type="button" class="button red" >Excluir</button>
+        </td>
+    `
+    document.querySelector('#tbPedi>tbody').appendChild(newRowPedi)
+}
+
+
+const updateTablePedi = () => {
+    const dbPedi = readPedi()
+    dbPedi.forEach(createRowPedi)
+
+    
+}
+
+
+//interação com o Layout Pedidos
+const savePedi = () => {
+    if(isValidFieldsPedi()){
+        const pedido = {
+            sabor: document.getElementById('sabor').value,
+            tamanho: document.getElementById('tamanho').value,
+            tipo: document.getElementById('tipo').value,
+        }
+        createPedi(pedido)
+        updateTablePedi()
+    }
+}
+
+//interação com o layout Clientes
 const saveClient = () => {
     if(isValidFields()){
         const client = {
@@ -37,12 +88,20 @@ const saveClient = () => {
         }
         createClient(client)
         closeModal()
+        updateTable()
     }
 }
+
+// Validação dos campos de formularios
 
 const isValidFields = () => {
     return document.getElementById('form').reportValidity()
 }
+
+const isValidFieldsPedi = () => {
+    return document.getElementById('formPedi').reportValidity()
+}
+
 
 const clearFields = ( ) => {
     const fields = document.querySelectorAll('.modal-field')
@@ -50,7 +109,35 @@ const clearFields = ( ) => {
     document.getElementById('nome').dataset.index = 'new'
 }
 
-//FUNÇOES DO LOCALSTORAGE
+//LOCALSTORAGE PEDIDOS
+
+const getLSPedi = () => JSON.parse(localStorage.getItem('db_Pedi'))??[]
+const setLSPedi = (dbPedi) => localStorage.setItem("db_Pedi", JSON.stringify(dbPedi)) 
+
+// CRUD PEDIDOS
+
+const createPedi = (pedido) => {
+    const dbPedi = getLSPedi()
+    dbPedi.push(pedido)
+    setLSPedi(dbPedi)
+}
+
+const readPedi = () => getLSPedi()
+
+const updatePedi = (index, pedido) => {
+    const dbPedi = readPedi()
+    dbPedi[index] = pedido
+    setLSPedi(dbPedi)
+}
+
+const deletePedi = (index) => {
+    const dbPedi = readPedi()
+    dbPedi.splice(index, 1)
+    setLSPedi (dbPedi)
+}
+
+
+//LOCALSTORAGE CLIENTES
 
 const getLS = () => JSON.parse(localStorage.getItem('db_client'))??[]
 const setLS = (dbClient) => localStorage.setItem("db_client", JSON.stringify(dbClient))
@@ -81,6 +168,8 @@ const deleteClient = (index) => {
 }
 
 
+
+
 //EVENTS CLIENTES
 
 document.getElementById('cadastrarCliente')
@@ -102,6 +191,9 @@ document.getElementById('modalClosePedi')
 document.getElementById('salvar')
     .addEventListener('click', saveClient)
 
+document.getElementById('salvarPedi')
+    .addEventListener('click',savePedi )
+
 document.getElementById('cancelar')
     .addEventListener('click', closeModal)
 
@@ -109,5 +201,3 @@ document.getElementById('cancelarPedi')
     .addEventListener('click', closeModalPedi)
     //TESTE     
 
-    document.getElementById('pedidoSemCadastro')
-        .addEventListener('click' , my_fun)

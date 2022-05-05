@@ -27,12 +27,12 @@
             </ul>
         </div>
         
-        <!--LISTA DE PEDIDOS-->
+        <!--LISTA DE Clientes-->
         <h3>Clientes</h3>
-        <table class="records">
+        <table id="tbClient" class="records">
             <thead>
                 <tr>
-                    <th>Cliente</th>
+                    <th>Nome</th>
                     <th>Pedido</th>
                     <th>Endereço</th>
                     <th>Contato</th>
@@ -41,41 +41,27 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Maria</td>
-                    <td>02221</td>
-                    <td>Rua Torta, 44</td>
-                    <td>(11) 97165-1111</td>
-                    <td>
-                        <button type="button" class="button green">Editar</button>
-                        <button type="button" class="button red">Cancelar</button>
-                    </td>
+                    
                 </tr>
                 
             </tbody>
         </table>
 
-        <!--lISTA DE CLIENTES-->
+        <!--lISTA DE Pedidos-->
         <h3>Pedidos</h3>
-        <table class="records">
+        <table id="tbPedi" class="records">
             <thead>
                 <tr>
-                    <th>Nome</th>
-                    <th>Contato</th>
-                    <th>Endereço</th>
-                    <th>Pedidos</th>
+                    <th>Sabor</th>
+                    <th>Tamanho</th>
+                    <th>Tipo </th>
+                    <th>Cliente</th>
                     <th>Ação</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Maria</td>
-                    <td>(11) 97165-1111</td>
-                    <td>Anapolis</td>
-                    <td>0</td>
-                    <td>
-                        <button type="button" class="button green">Finalizar</button>
-                        <button type="button" class="button red">Cancelar</button>
-                    </td>
+                
                 </tr>
                 
             </tbody>
@@ -114,11 +100,10 @@
                     <span class="modal-close" id="modalClosePedi">&#10006;</span>
                 </header>
                 <!--formulario para realizar pedido-->
-                <form id="formCadPedi" class="modal-form">
+                <form id="formPedi" class="modal-form">
                     <input id="sabor" type="text" class="modal-field" placeholder="Sabor" required>
-                    <input id="sabor" type="text" class="modal-field" placeholder="Tamanho" required>
-                    <input id="sabor" type="text" class="modal-field" placeholder="Tipo" required>
-                    <input id="sabor" type="text" class="modal-field" placeholder="Cliente" required>
+                    <input id="tamanho" type="text" class="modal-field" placeholder="Tamanho" required>
+                    <input id="tipo" type="text" class="modal-field" placeholder="Tipo" required>
                 </form>
               
 
