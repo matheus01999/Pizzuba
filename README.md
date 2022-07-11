@@ -26,7 +26,9 @@ desc.
     
 :white_check_mark: CSS
     
-:white_check_mark: LocalStorage
+:white_check_mark: NodeJs
+
+:white_check_mark: ExpressJS
     
 <h3 align="center"> 
     :construction:  Em Produção  :construction:
@@ -34,10 +36,6 @@ desc.
  
  
  <h4> Tecnologias </h4>
- 
- :black_square_button: NodeJS
- 
- :black_square_button:Express
  
  :black_square_button:Mysql
  
